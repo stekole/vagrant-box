@@ -1,0 +1,13 @@
+---
+- name: hypervisor.local
+  description: hypervisor
+  box: centos/7
+  cpus: 2
+  cpu_execution_cap: 75
+  ram: 1024
+  ssh_port: 2201
+  provision:
+    meta-data: ./cloud-init/nocloud-net/meta-data.yaml
+    user-data: ./cloud-init/nocloud-net/user-data.yaml
+    script: ./scripts/provision.sh
+
