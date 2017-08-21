@@ -18,6 +18,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
         srv.vm.box_version = boxes['box_version']
       end
       srv.vm.hostname = boxes['name']
+      # Adding for port 8080 support
+      config.vm.network "forwarded_port", guest: 8080, host: 80
 
       # Networking.  By default a NAT interface is added.
       # Add an internal network like this:
