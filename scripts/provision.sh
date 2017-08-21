@@ -15,7 +15,7 @@ USER_DATA=/tmp/vagrant/cloud-init/nocloud-net/user-data
 [[ -f $SUCCESS_INDICATOR ]] && exit 1
 
 # install cloud-init
-yum install -y cloud-init
+yum install -y cloud-init docker
 
 # write cloud-init files
 mkdir -p $DATA_SOURCE
@@ -29,7 +29,6 @@ cloud-init modules
 # create vagrant_provision on successful run
 touch $SUCCESS_INDICATOR
 
-#moved to cloud-init
-#yum install -y docker
+service docker start
 
 exit 0
