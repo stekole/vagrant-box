@@ -19,5 +19,6 @@ packages:
   - docker
   - git
   - nmap
+  - dnsutils
 runcmd:
   - chkconfig docker on
